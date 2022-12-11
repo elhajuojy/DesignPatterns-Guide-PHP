@@ -1,55 +1,105 @@
-<?php 
+<?php
+/**
+ * Singleton
+ *
+ * @desc
+ *     Allows only one instance of the class.
+ *     The modern way allows you to define Singleton once.
+ *
+ * @usage
+ *     You only wanted one Database object.
+ *     You only wanted one Front Controller (MVC).
+ *
+ * @example
+ *     We create a fake Singleton Database Object.
+ *
+ */
 
 
-class Singleton
+abstract class Singleton
 {
-    private static $instance = null;
-    private $name = null;
-    private $count = 0;
-    //lazy instantiation
-    private $database =null;
-    private function __construct()
-    {
-        $this->name = "Singleton";
-    }
+    /**
+     * This stores the only instance of this class.
+     *
+     * @var boolean|object
+     */
+    private static $instance = false;
 
-    public static function getInstance()
-    {
-        if (self::$instance == null) {
-            self::$instance = new Singleton();
+    /**
+     * This is how we get our single instance
+     *
+     * @return object
+     */
+    public static function getInstance() {
+        // If we have no instance, create one.
+        if (self::$instance == false) {
+            self::$instance = new static();
         }
+
+        // Late Static Binding,
+        // Allows Pattern to be Re-used
         return self::$instance;
     }
 
-    public function getDatabaseInstance()
-    {
-        if($this->database == null){
-            $this->database = "database";
-        }
-        return $this->database;
-    }
-    public function getName()
-    {
-        return $this->name;
-    }
-    
-    public function getCount()
-    {
-        return $this->count;
-    }
+    /**
+     * Don't allow the "new Class" construct
+     */
+    protected function __construct() {}
 
-    public function addOne(){
-        $this->count++;
-    }
+    
+
+    
 }
 
-$singleton = Singleton::getInstance();
-$singleton1 = singleton::getInstance();
+// --------------------------------------------------------
+// Fake Class(es) for Example
+// --------------------------------------------------------
+class Database extends Singleton
+{
+    protected $dsn;
 
-//2 object adding 1 to count
-$singleton->addOne();
-$singleton1->addOne();
+    /**
+     * Example method (Not part of the pattern)
+     *
+     * @param string $dsn
+     */
+    public function setDsn($dsn) {
+        $this->dsn = $dsn;
+    }
 
+    /**
+     * Example method (Not part of the pattern)
+     */
+    public function getDsn() {
+        return $this->dsn;
+    }
+    
+    /**
+     * Don't allow clones of this object
+     */
+    private function __clone() {}
 
-//the count will be 2 because the 2 object are the same instance of the class
+    /**
+     * Don't allow serialization of this object
+     */
+    private function __wakeup() {}
+}
 
+// --------------------------------------------------------
+// Example
+// --------------------------------------------------------
+$database = Database::getInstance();
+//$database = new Database(); // This will fail
+$database->setDsn('mysql://');
+
+echo $database->getDsn();
+echo "\n";
+
+// Getting the instance again will still use the same instance
+$foo = Database::getInstance();
+$foo->setDsn('postgres://');
+
+echo $foo->getDsn();
+echo "\n";
+echo $database->getDsn();
+echo "\n";
