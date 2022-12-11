@@ -8,4 +8,5 @@ The prototype pattern is a creational design pattern. Prototype patterns are req
 
 In Shallow copy, a copy of the original object is stored and only the reference address is finally copied. In Deep copy, the copy of the original object and the repetitive copies both are stored.
 
-[Read more](https://www.youtube.com/watch?v=I_71aj-NU8g&ab_channel=RohitKautkar)
+[Read more : youtube ](https://www.youtube.com/watch?v=I_71aj-NU8g&ab_channel=RohitKautkar)
+[Article ](https://www.c-sharpcorner.com/UploadFile/d9da8a/deference-between-deep-copy-and-shallow-copy-in-php/)
