@@ -26,3 +26,17 @@ $invoice1 = clone $invoice;
 
 var_dump($invoice, $invoice1);
 
+
+// object(Invoice)#1 (2) {
+//     ["id":"Invoice":private]=>
+//     string(21) "invoice_6395c403f1541"
+//     ["date"]=>
+//     string(10) "2022-01-01"
+//   }
+
+//   object(Invoice)#2 (2) {
+//     ["id":"Invoice":private]=>
+//     string(21) "invoice_6395c403f154b"
+//     ["date"]=>
+//     string(10) "2022-01-01"
+//   }
