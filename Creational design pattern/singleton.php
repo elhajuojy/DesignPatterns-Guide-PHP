@@ -6,7 +6,8 @@ class Singleton
     private static $instance = null;
     private $name = null;
     private $count = 0;
-
+    //lazy instantiation
+    private $database =null;
     private function __construct()
     {
         $this->name = "Singleton";
@@ -20,6 +21,13 @@ class Singleton
         return self::$instance;
     }
 
+    public function getDatabaseInstance()
+    {
+        if($this->database == null){
+            $this->database = "database";
+        }
+        return $this->database;
+    }
     public function getName()
     {
         return $this->name;
@@ -44,4 +52,4 @@ $singleton1->addOne();
 
 
 //the count will be 2 because the 2 object are the same instance of the class
-echo $singleton1->getCount();
+
