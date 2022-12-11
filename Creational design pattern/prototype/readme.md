@@ -1,4 +1,4 @@
-# prototype design pattern
+# Prototype design pattern
 
 The prototype pattern is a creational design pattern. Prototype patterns are required, when object creation is time consuming, and costly operation, so we create objects with the existing object itself. One of the best available ways to create an object from existing objects is the clone() method
 
