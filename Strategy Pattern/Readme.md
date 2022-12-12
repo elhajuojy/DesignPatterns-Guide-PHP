@@ -6,4 +6,4 @@ defines a family of algorithms,
 encapsulates each algorithm, and
 makes the algorithms interchangeable within that family.”
 **Class Diagram:**
-![Class Diagram:](https://media.geeksforgeeks.org/wp-content/uploads/classinh.jpg)
+![Class Diagram:](https://media.geeksforgeeks.org/wp-content/uploads/classss.jpg)
