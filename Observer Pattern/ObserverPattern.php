@@ -80,15 +80,23 @@ $window = new WindowDisplay($weatherStation);
 $weatherStation->add($phone);
 $weatherStation->add($window);
 
+function cls()                                                                                                             
+{
+    print("\033[2J\033[;H");
+}
 
 for ($x = 0; $x <= 10; $x++) {
+    cls();
     $weatherStation->setTemperature($x);
     $weatherStation->notify();
     echo $phone->displayPhone();
     echo "\n";
     echo $window->displayWindow();
     sleep(1);
-    system('cls');
+    // system('cls');
+    // ncurses_clear();
+    
+
 }
 
 //!output
@@ -114,3 +122,5 @@ for ($x = 0; $x <= 10; $x++) {
 // windows:9
 // phone:10
 // windows:10
+
+//todo :you can create counter  example ;
