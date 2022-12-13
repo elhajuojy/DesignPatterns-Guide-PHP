@@ -1,0 +1,4 @@
+# Facade Design Pattern
+
+Facade is a part of Gang of Four design pattern and it is categorized under Structural design patterns. Before we dig into the details of it, let us discuss some examples which will be solved by this particular Pattern. So, As the name suggests, it means the face of the building. The people walking past the road can only see this glass face of the building. They do not know anything about it, the wiring, the pipes and other complexities. It hides all the complexities of the building and displays a friendly face.
+![Facade Design Pattern](https://media.geeksforgeeks.org/wp-content/uploads/facadeA.png)
