@@ -71,8 +71,8 @@ $toysrus = new Facade(1, 4);
 $bestbuy = new Facade(1, 2);
 
 $retail_prices = [
-    'bestbuy' => $bestbuy->process(), 
     'kbtoys' => $kbtoys->process(),
+    'bestbuy' => $bestbuy->process(), 
     'toysrus' => $toysrus->process(),
 ];
 

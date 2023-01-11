@@ -52,6 +52,7 @@ $Client2->setStrategy(new OperationSubstract());
 echo  $Client2->runOpreation(10, 5);
 
 
+
 // output:
 // 15
 // 5
