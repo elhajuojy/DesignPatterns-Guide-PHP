@@ -21,4 +21,13 @@ Structural Design Patterns mainly responsible for assemble object and classes in
 
 Behavior Design Patterns are responsible for how one class communicates with others.
 
+## Below is an image showing the relationship among the various design patterns as explained by the seminal design patterns work done by the gang of four.
+
+![Design Pattern Relationships](https://user-images.githubusercontent.com/86893073/212121703-3dd6cf60-5d36-4fb3-b87c-ab075ec672e7.png)
+
+
+
+
 ### [Read more ](https://www.javatpoint.com/classification-of-design-pattern-in-python#:~:text=Design%20Patterns%20are%20categorized%20mainly,the%20entire%20system%20being%20design.)
+
+
